@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Ecommerce Portal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>My Ecommerce Portal</h1>
+    <nav>
+      <a href="#" onclick="showSection('home')">Home</a>
+      <a href="#" onclick="showSection('products')">Products</a>
+      <a href="#" onclick="showSection('login')">Login</a>
+      <a href="#" onclick="showSection('register')">Register</a>
+      <a href="#" onclick="showSection('orders')">Orders</a>
+      <a href="#" onclick="showSection('wishlist')">Wishlist</a>
+      <a href="#" onclick="showSection('contact')">Contact Us</a>
+      <a href="#" onclick="showSection('about')">About Us</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <h2>Welcome to My Ecommerce Portal</h2>
+      <p>Shop easily and explore great products at best prices!</p>
+    </section>
+
+    <section id="products" class="hidden">
+      <h2>Our Products</h2>
+      <div class="product-list">
+        <div class="product">
+          <img src="https://via.placeholder.com/100" alt="Phone" />
+          <h3>Smartphone</h3>
+          <p>₹15,000</p>
+          <button onclick="addToCart('Smartphone')">Add to Orders</button>
+          <button onclick="addToWishlist('Smartphone')">Add to Wishlist</button>
+        </div>
+        <div class="product">
+          <img src="https://via.placeholder.com/100" alt="Laptop" />
+          <h3>Laptop</h3>
+          <p>₹50,000</p>
+          <button onclick="addToCart('Laptop')">Add to Orders</button>
+          <button onclick="addToWishlist('Laptop')">Add to Wishlist</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="login" class="hidden">
+      <h2>Login</h2>
+      <form onsubmit="return loginUser()">
+        <input type="email" id="loginEmail" placeholder="Email" required><br>
+        <input type="password" id="loginPassword" placeholder="Password" required><br>
+        <button type="submit">Login</button>
+      </form>
+    </section>
+
+    <section id="register" class="hidden">
+      <h2>Register</h2>
+      <form onsubmit="return registerUser()">
+        <input type="text" id="regName" placeholder="Full Name" required><br>
+        <input type="email" id="regEmail" placeholder="Email" required><br>
+        <input type="password" id="regPassword" placeholder="Password" required><br>
+        <button type="submit">Register</button>
+      </form>
+    </section>
+
+    <section id="orders" class="hidden">
+      <h2>My Orders</h2>
+      <ul id="orderList"></ul>
+    </section>
+
+    <section id="wishlist" class="hidden">
+      <h2>My Wishlist</h2>
+      <ul id="wishlistItems"></ul>
+    </section>
+
+    <section id="contact" class="hidden">
+      <h2>Contact Us</h2>
+      <form onsubmit="return sendMessage()">
+        <input type="text" id="contactName" placeholder="Your Name" required><br>
+        <textarea id="contactMsg" placeholder="Your Message" required></textarea><br>
+        <button type="submit">Send Message</button>
+      </form>
+      <p id="contactResponse"></p>
+    </section>
+
+    <section id="about" class="hidden">
+      <h2>About Us</h2>
+      <p>This is a simple E-Commerce website project created by <b>NITIN K</b>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My Ecommerce Portal</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
